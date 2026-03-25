@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f4f6f9;
+        }
+
+        .card {
+            margin: 100px auto;
+            padding: 30px;
+            width: 400px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .score {
+            font-size: 28px;
+            color: #007bff;
+            margin: 15px 0;
+        }
+
+        .state {
+            font-size: 20px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Your Result</h2>
+
+        <div class="score">
+            Score: {{ score }}
+        </div>
+
+        <div class="state">
+            {{ state }}
+        </div>
+
+        <form action="/">
+            <button type="submit">Go Home</button>
+        </form>
+    </div>
+
+</body>
+</html>

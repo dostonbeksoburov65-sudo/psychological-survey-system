@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Self-Efficacy Survey</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .question-box {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .option {
+            margin-left: 10px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Academic Self-Efficacy Survey</h2>
+
+    <form action="/submit" method="POST">
+
+        <!-- hidden user info -->
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="dob" value="{{ dob }}">
+        <input type="hidden" name="student_id" value="{{ student_id }}">
+
+        {% for q in questions %}
+            {% set q_index = loop.index0 %}
+
+            <div class="question-box">
+
+                <div class="question-text">
+                    {{ loop.index }}. {{ q.question }}
+                </div>
+
+                {% for opt in q.options %}
+                    <div class="option">
+                        <input type="radio"
+                               name="q{{ q_index }}"
+                               value="{{ opt.score }}"
+                               required>
+                        {{ opt.text }}
+                    </div>
+                {% endfor %}
+
+            </div>
+        {% endfor %}
+
+        <button type="submit">Submit Answers</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

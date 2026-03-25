@@ -1,0 +1,203 @@
+[
+  {
+    "question": "How confident are you in understanding a new academic topic on your own?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Slightly confident", "score": 2},
+      {"text": "Not very confident", "score": 3},
+      {"text": "Not confident at all", "score": 4}
+    ]
+  },
+  {
+    "question": "When given a challenging assignment, how capable do you feel of completing it?",
+    "options": [
+      {"text": "Fully capable", "score": 0},
+      {"text": "Mostly capable", "score": 1},
+      {"text": "Somewhat capable", "score": 2},
+      {"text": "Slightly capable", "score": 3},
+      {"text": "Not capable", "score": 4}
+    ]
+  },
+  {
+    "question": "How well can you stay motivated when studying difficult material?",
+    "options": [
+      {"text": "Very well", "score": 0},
+      {"text": "Well", "score": 1},
+      {"text": "Moderately", "score": 2},
+      {"text": "Poorly", "score": 3},
+      {"text": "Very poorly", "score": 4}
+    ]
+  },
+  {
+    "question": "How confident are you in preparing for exams without external help?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly unsure", "score": 3},
+      {"text": "Not confident", "score": 4}
+    ]
+  },
+  {
+    "question": "How often do you believe you can improve your academic performance through effort?",
+    "options": [
+      {"text": "Always", "score": 0},
+      {"text": "Often", "score": 1},
+      {"text": "Sometimes", "score": 2},
+      {"text": "Rarely", "score": 3},
+      {"text": "Never", "score": 4}
+    ]
+  },
+  {
+    "question": "How certain are you that you can manage multiple academic tasks effectively?",
+    "options": [
+      {"text": "Very certain", "score": 0},
+      {"text": "Certain", "score": 1},
+      {"text": "Moderately certain", "score": 2},
+      {"text": "Slightly certain", "score": 3},
+      {"text": "Not certain", "score": 4}
+    ]
+  },
+  {
+    "question": "When facing academic failure, how confident are you in trying again?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly doubtful", "score": 3},
+      {"text": "Very doubtful", "score": 4}
+    ]
+  },
+  {
+    "question": "How capable do you feel in organizing your study time efficiently?",
+    "options": [
+      {"text": "Very capable", "score": 0},
+      {"text": "Capable", "score": 1},
+      {"text": "Moderately capable", "score": 2},
+      {"text": "Slightly capable", "score": 3},
+      {"text": "Not capable", "score": 4}
+    ]
+  },
+  {
+    "question": "How confident are you in asking questions when you don’t understand something?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Hesitant", "score": 3},
+      {"text": "Very hesitant", "score": 4}
+    ]
+  },
+  {
+    "question": "How well do you believe you can achieve your academic goals?",
+    "options": [
+      {"text": "Very well", "score": 0},
+      {"text": "Well", "score": 1},
+      {"text": "Moderately", "score": 2},
+      {"text": "Poorly", "score": 3},
+      {"text": "Very poorly", "score": 4}
+    ]
+  },
+
+  {
+    "question": "How confident are you in solving unfamiliar academic problems?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly unsure", "score": 3},
+      {"text": "Not confident", "score": 4}
+    ]
+  },
+  {
+    "question": "How capable do you feel in maintaining focus during long study sessions?",
+    "options": [
+      {"text": "Very capable", "score": 0},
+      {"text": "Capable", "score": 1},
+      {"text": "Moderately capable", "score": 2},
+      {"text": "Slightly capable", "score": 3},
+      {"text": "Not capable", "score": 4}
+    ]
+  },
+  {
+    "question": "How confident are you in adapting to new learning methods or styles?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly unsure", "score": 3},
+      {"text": "Not confident", "score": 4}
+    ]
+  },
+  {
+    "question": "How well can you handle academic pressure during deadlines?",
+    "options": [
+      {"text": "Very well", "score": 0},
+      {"text": "Well", "score": 1},
+      {"text": "Moderately", "score": 2},
+      {"text": "Poorly", "score": 3},
+      {"text": "Very poorly", "score": 4}
+    ]
+  },
+  {
+    "question": "How confident are you in completing tasks without procrastinating?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly unsure", "score": 3},
+      {"text": "Not confident", "score": 4}
+    ]
+  },
+  {
+    "question": "How capable do you feel in reviewing and improving your own work?",
+    "options": [
+      {"text": "Very capable", "score": 0},
+      {"text": "Capable", "score": 1},
+      {"text": "Moderately capable", "score": 2},
+      {"text": "Slightly capable", "score": 3},
+      {"text": "Not capable", "score": 4}
+    ]
+  },
+  {
+    "question": "How confident are you in participating actively in class discussions?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly hesitant", "score": 3},
+      {"text": "Very hesitant", "score": 4}
+    ]
+  },
+  {
+    "question": "How well do you believe you can overcome academic difficulties independently?",
+    "options": [
+      {"text": "Very well", "score": 0},
+      {"text": "Well", "score": 1},
+      {"text": "Moderately", "score": 2},
+      {"text": "Poorly", "score": 3},
+      {"text": "Very poorly", "score": 4}
+    ]
+  },
+  {
+    "question": "How confident are you in learning from your academic mistakes?",
+    "options": [
+      {"text": "Very confident", "score": 0},
+      {"text": "Confident", "score": 1},
+      {"text": "Neutral", "score": 2},
+      {"text": "Slightly unsure", "score": 3},
+      {"text": "Not confident", "score": 4}
+    ]
+  },
+  {
+    "question": "How capable do you feel in staying consistent with your study routine?",
+    "options": [
+      {"text": "Very capable", "score": 0},
+      {"text": "Capable", "score": 1},
+      {"text": "Moderately capable", "score": 2},
+      {"text": "Slightly capable", "score": 3},
+      {"text": "Not capable", "score": 4}
+    ]
+  }
+]
