@@ -80,7 +80,7 @@
     ]
   },
   {
-    "question": "How confident are you in asking questions when you don’t understand something?",
+    "question": "How confident are you in asking questions when you do not understand something?",
     "options": [
       {"text": "Very confident", "score": 0},
       {"text": "Confident", "score": 1},

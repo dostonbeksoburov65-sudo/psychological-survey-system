@@ -1,7 +1,31 @@
-{
-    "name": "Dostonbek",
-    "student_id": "1125",
-    "date_of_birth": "2006-11-25",
-    "score": 21,
-    "state": "Mild Emotional Pressure"
-}
+[
+    {
+        "name": "Doston",
+        "student_id": "2564",
+        "date_of_birth": "2006-11-25",
+        "score": 25,
+        "state": "Good Confidence",
+        "timestamp": "2026-03-31 04:08:17"
+    },
+    {
+        "name": "Dostonbek Soburov",
+        "student_id": "25",
+        "date_of_birth": "2006-11-25",
+        "score": 20,
+        "state": "Good Confidence"
+    },
+    {
+        "name": "Dostonbek Soburov",
+        "student_id": "22548",
+        "date_of_birth": "2005-11-25",
+        "score": 19,
+        "state": "Good Confidence"
+    },
+    {
+        "name": "dds",
+        "student_id": "22254",
+        "date_of_birth": "2005-11-25",
+        "score": 18,
+        "state": "Good Confidence"
+    }
+]

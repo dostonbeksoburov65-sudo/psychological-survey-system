@@ -1,22 +1,42 @@
 from flask import Flask, render_template, request
 import json
+import os
 import re
 from datetime import datetime
 
 app = Flask(__name__)
 
 
-# -------------------------
-# LOAD QUESTIONS FROM JSON
-# -------------------------
+# =========================
+# LOAD QUESTIONS
+# =========================
 def load_questions():
     with open("questions.json", "r") as file:
         return json.load(file)
 
 
-# -------------------------
+# =========================
+# SAVE RESULTS (LIST MODE)
+# =========================
+def save_result(new_data):
+    if os.path.exists("results.json"):
+        with open("results.json", "r") as file:
+            try:
+                data = json.load(file)
+            except:
+                data = []
+    else:
+        data = []
+
+    data.append(new_data)
+
+    with open("results.json", "w") as file:
+        json.dump(data, file, indent=4)
+
+
+# =========================
 # VALIDATIONS
-# -------------------------
+# =========================
 def validate_name(name):
     pattern = r"^[A-Za-z\s'-]+$"
     return re.match(pattern, name)
@@ -34,26 +54,23 @@ def validate_dob(dob):
         return False
 
 
-# -------------------------
-# SELF-EFFICACY RESULT LOGIC
-# -------------------------
+# =========================
+# SCORE INTERPRETATION
+# =========================
 def get_state(score):
-
     if score <= 15:
         return "Very High Self-Efficacy"
     elif score <= 30:
         return "Good Confidence"
     elif score <= 45:
-        return "Moderate Confidence"
-    elif score <= 60:
-        return "Low Self-Efficacy"
+        return "Moderate Self-Doubt"
     else:
-        return "Very Low Self-Efficacy"
+        return "Low Self-Efficacy"
 
 
-# -------------------------
+# =========================
 # ROUTES
-# -------------------------
+# =========================
 
 # HOME PAGE
 @app.route("/")
@@ -61,7 +78,7 @@ def home():
     return render_template("index.html")
 
 
-# START SURVEY (USER INPUT VALIDATION)
+# START SURVEY
 @app.route("/survey", methods=["POST"])
 def survey():
 
@@ -69,12 +86,11 @@ def survey():
     dob = request.form.get("dob")
     student_id = request.form.get("student_id")
 
-    # VALIDATION CHECKS
     if not validate_name(name):
-        return "Invalid name format (Only letters, spaces, - and ' allowed)"
+        return "Invalid name format"
 
     if not validate_dob(dob):
-        return "Invalid date of birth (Use YYYY-MM-DD)"
+        return "Invalid date of birth"
 
     if not validate_student_id(student_id):
         return "Student ID must contain only digits"
@@ -90,22 +106,35 @@ def survey():
     )
 
 
-# SUBMIT SURVEY (CALCULATE SCORE + SAVE RESULT)
+# SUBMIT ANSWERS
 @app.route("/submit", methods=["POST"])
 def submit():
 
     questions = load_questions()
     total_score = 0
 
-    # CALCULATE SCORE
-    for i in range(len(questions)):
-        answer = request.form.get(f"q{i+1}")
-        if answer:
-            total_score += int(answer)
+    # ===== WHILE LOOP =====
+    i = 0
+    while i < len(questions):
+        answer = request.form.get(f"q{i}")
+
+        if answer is None:
+            return f"Error: Question {i+1} not answered"
+
+        total_score += int(answer)
+        i += 1
+
+    # ===== EXTRA VARIABLE TYPES =====
+    sample_float = float(total_score) / len(questions)
+    sample_tuple = ("survey", "result")
+    sample_set = {"A", "B", "C"}
+    sample_frozenset = frozenset(sample_set)
+    sample_bool = total_score > 30
+
+    print(sample_float, sample_tuple, sample_set, sample_frozenset, sample_bool)
 
     state = get_state(total_score)
 
-    # SAVE RESULT TO JSON
     result_data = {
         "name": request.form.get("name"),
         "student_id": request.form.get("student_id"),
@@ -114,8 +143,7 @@ def submit():
         "state": state
     }
 
-    with open("results.json", "w") as file:
-        json.dump(result_data, file, indent=4)
+    save_result(result_data)
 
     return render_template(
         "result.html",
@@ -124,8 +152,8 @@ def submit():
     )
 
 
-# -------------------------
-# RUN APP
-# -------------------------
+# =========================
+# RUN
+# =========================
 if __name__ == "__main__":
     app.run(debug=True)
