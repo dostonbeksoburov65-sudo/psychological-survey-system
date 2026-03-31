@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Result</title>
+    <meta charset="UTF-8">
+    <title>Survey Result</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         body {
-            font-family: Arial;
-            text-align: center;
-            background-color: #f4f6f9;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 40px;
         }
 
-        .card {
-            margin: 100px auto;
-            padding: 30px;
-            width: 400px;
+        .container {
+            max-width: 600px;
+            margin: auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         h2 {
@@ -23,49 +29,72 @@
         }
 
         .score {
-            font-size: 28px;
-            color: #007bff;
-            margin: 15px 0;
+            font-size: 40px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
         }
 
         .state {
             font-size: 20px;
-            color: #28a745;
-            font-weight: bold;
+            margin-bottom: 20px;
+            color: #555;
         }
 
-        button {
+        canvas {
             margin-top: 20px;
-            padding: 10px 20px;
-            border: none;
-            background: #007bff;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
         }
 
-        button:hover {
-            background: #0056b3;
+        .btn {
+            margin-top: 25px;
+            padding: 12px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #5563c1;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="card">
-        <h2>Your Result</h2>
+<div class="container">
 
-        <div class="score">
-            Score: {{ score }}
-        </div>
+    <h2>📊 Your Result</h2>
 
-        <div class="state">
-            {{ state }}
-        </div>
+    <div class="score">{{ score }}</div>
 
-        <form action="/">
-            <button type="submit">Go Home</button>
-        </form>
-    </div>
+    <div class="state">{{ state }}</div>
+
+    <canvas id="myChart"></canvas>
+
+    <a href="/" class="btn">🔁 Take Again</a>
+
+</div>
+
+<script>
+    const score = {{ score }};
+    const maxScore = 80;  // 20 savol × 4 max
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Your Score', 'Max Score'],
+            datasets: [{
+                label: 'Result',
+                data: [score, maxScore]
+            }]
+        }
+    });
+</script>
 
 </body>
 </html>

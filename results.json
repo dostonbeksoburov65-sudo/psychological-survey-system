@@ -27,5 +27,12 @@
         "date_of_birth": "2005-11-25",
         "score": 18,
         "state": "Good Confidence"
+    },
+    {
+        "name": "Dostonbek Saburov",
+        "student_id": "2511",
+        "date_of_birth": "2006-11-25",
+        "score": 25,
+        "state": "Good Confidence"
     }
 ]
